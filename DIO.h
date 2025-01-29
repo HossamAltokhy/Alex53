@@ -29,7 +29,7 @@ void DIO_DIR_PINx(char PORTx, char PINx, char PIN_DIR);
 void DIO_SET_PORTx(char PORTx, char PORT_DATA);
 void DIO_SET_PINx(char PORTx, char PINx);
 void DIO_RESET_PINx(char PORTx, char PINx);
-
+void DIO_TOGGLE_PINx(char PORTx, char PINx);
 
 // INPUT
 // READ

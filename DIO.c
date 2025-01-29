@@ -26,31 +26,31 @@ void DIO_DIR_PINx(char PORTx, char PINx, char PIN_DIR) {
     switch (PORTx) {
         case PORTx_A:
             if (PIN_DIR) {
-                PORTA |= (1 << PINx);
+                DDRA |= (1 << PINx);
             } else {
-                PORTA &= ~(1 << PINx);
+                DDRA &= ~(1 << PINx);
             }
 
             break;
         case PORTx_B:
             if (PIN_DIR) {
-                PORTB |= (1 << PINx);
+                DDRB |= (1 << PINx);
             } else {
-                PORTB &= ~(1 << PINx);
+                DDRB &= ~(1 << PINx);
             }
             break;
         case PORTx_C:
             if (PIN_DIR) {
-                PORTC |= (1 << PINx);
+                DDRC |= (1 << PINx);
             } else {
-                PORTC &= ~(1 << PINx);
+                DDRC &= ~(1 << PINx);
             }
             break;
         case PORTx_D:
             if (PIN_DIR) {
-                PORTD |= (1 << PINx);
+                DDRD |= (1 << PINx);
             } else {
-                PORTD &= ~(1 << PINx);
+                DDRD &= ~(1 << PINx);
             }
             break;
     }
@@ -92,6 +92,25 @@ void DIO_SET_PINx(char PORTx, char PINx) {
             break;
     }
 }
+
+void DIO_TOGGLE_PINx(char PORTx, char PINx) {
+    switch (PORTx) {
+        case PORTx_A:
+            PORTA ^= (1 << PINx);
+            break;
+        case PORTx_B:
+            PORTB ^= (1 << PINx);
+            break;
+        case PORTx_C:
+            PORTC ^= (1 << PINx);
+            break;
+        case PORTx_D:
+            PORTD ^= (1 << PINx);
+            break;
+    }
+}
+
+
 
 void DIO_RESET_PINx(char PORTx, char PINx) {
     switch (PORTx) {

@@ -54,3 +54,26 @@ void LED_OFF(char LED) {
             break;
     }
 }
+
+void LED_TOG(char LED){
+    switch (LED) {
+        case LED1:
+            DIO_TOGGLE_PINx(LED1_DIR, LED1);
+            break;
+        case LED2:
+            DIO_TOGGLE_PINx(LED2_DIR, LED2);
+            break;
+        case LED3:
+            DIO_TOGGLE_PINx(LED3_DIR, LED3);
+            break;
+        case LED4:
+            DIO_TOGGLE_PINx(LED4_DIR, LED4);
+            break;
+        case ALL_LEDs:
+            DIO_TOGGLE_PINx(LED1_DIR, LED1);
+            DIO_TOGGLE_PINx(LED2_DIR, LED2);
+            DIO_TOGGLE_PINx(LED3_DIR, LED3);
+            DIO_TOGGLE_PINx(LED4_DIR, LED4);
+            break;
+    }
+}

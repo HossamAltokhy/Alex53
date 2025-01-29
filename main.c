@@ -25,8 +25,14 @@ int main(void) {
     
     while (1) {
 
-        Buzzer_ON();
-        LED_ON(LED1);
+        Buzzer_Alarm();
+        LED_TOG(LED1);
+        Buzzer_Alarm();
+        LED_TOG(LED2);
+        Buzzer_Alarm();
+        LED_TOG(LED3);
+        Buzzer_Alarm();
+        LED_TOG(LED4);
        
     }
 }
