@@ -1,72 +1,147 @@
 
 #include <avr/io.h>
+#include "DIO.h"
 
 
+// Direction ?   input or output
 
-void setPORTA_DIR(char PORT_DIR) {
-    DDRA = PORT_DIR;
-}
-
-void setPINA_DIR(char pinNum, char Pin_state) {
-    // OUTPUT pin
-    if (Pin_state == 1) {
-        // set Bit
-        DDRA |= (1 << pinNum);
-    }        // INPUT pin
-    else {
-        // reset Bit
-        DDRA &= ~(1 << pinNum);
+void DIO_DIR_PORTx(char PORTx, char PORT_DIR) {
+    switch (PORTx) {
+        case PORTx_A:
+            DDRA = PORT_DIR;
+            break;
+        case PORTx_B:
+            DDRB = PORT_DIR;
+            break;
+        case PORTx_C:
+            DDRC = PORT_DIR;
+            break;
+        case PORTx_D:
+            DDRD = PORT_DIR;
+            break;
     }
 }
 
-void setPORTA_Val(char PORT_Val) {
+void DIO_DIR_PINx(char PORTx, char PINx, char PIN_DIR) {
+    switch (PORTx) {
+        case PORTx_A:
+            if (PIN_DIR) {
+                PORTA |= (1 << PINx);
+            } else {
+                PORTA &= ~(1 << PINx);
+            }
 
-    PORTA = PORT_Val;
-
-}
-
-void setPINA_Val(char pinNum, char Pin_state) {
-    // HIGH pin
-    if (Pin_state == 1) {
-        // set Bit
-        PORTA |= (1 << pinNum);
-    }        // LOW pin
-    else {
-        // reset Bit
-        PORTA &= ~(1 << pinNum);
+            break;
+        case PORTx_B:
+            if (PIN_DIR) {
+                PORTB |= (1 << PINx);
+            } else {
+                PORTB &= ~(1 << PINx);
+            }
+            break;
+        case PORTx_C:
+            if (PIN_DIR) {
+                PORTC |= (1 << PINx);
+            } else {
+                PORTC &= ~(1 << PINx);
+            }
+            break;
+        case PORTx_D:
+            if (PIN_DIR) {
+                PORTD |= (1 << PINx);
+            } else {
+                PORTD &= ~(1 << PINx);
+            }
+            break;
     }
 }
 
-void setPORTB_DIR(char PORT_DIR) {
-    DDRB = PORT_DIR;
-}
+// OUTPUT
+// State ?  High or Low
 
-void setPINB_DIR(char pinNum, char Pin_state) {
-    // OUTPUT pin
-    if (Pin_state == 1) {
-        // set Bit
-        DDRB |= (1 << pinNum);
-    }        // INPUT pin
-    else {
-        // reset Bit
-        DDRB &= ~(1 << pinNum);
+void DIO_SET_PORTx(char PORTx, char PORT_DATA) {
+    switch (PORTx) {
+        case PORTx_A:
+            PORTA = PORT_DATA;
+            break;
+        case PORTx_B:
+            PORTB = PORT_DATA;
+            break;
+        case PORTx_C:
+            PORTC = PORT_DATA;
+            break;
+        case PORTx_D:
+            PORTD = PORT_DATA;
+            break;
     }
 }
 
-void setPORTB_Val(char PORT_Val) {
-
-    PORTB = PORT_Val;
-
+void DIO_SET_PINx(char PORTx, char PINx) {
+    switch (PORTx) {
+        case PORTx_A:
+            PORTA |= (1 << PINx);
+            break;
+        case PORTx_B:
+            PORTB |= (1 << PINx);
+            break;
+        case PORTx_C:
+            PORTC |= (1 << PINx);
+            break;
+        case PORTx_D:
+            PORTD |= (1 << PINx);
+            break;
+    }
 }
 
-void setPINB_Val(char pinNum, char Pin_state) {
-    // HIGH pin
-    if (Pin_state == 1) {
-        // set Bit
-        PORTB |= (1 << pinNum);
-    }        // LOW pin
-    else {
-        // reset Bit
-        PORTB &= ~(1 << pinNum);
+void DIO_RESET_PINx(char PORTx, char PINx) {
+    switch (PORTx) {
+        case PORTx_A:
+            PORTA &= ~(1 << PINx);
+            break;
+        case PORTx_B:
+            PORTB &= ~(1 << PINx);
+            break;
+        case PORTx_C:
+            PORTC &= ~(1 << PINx);
+            break;
+        case PORTx_D:
+            PORTD &= ~(1 << PINx);
+            break;
+    }
+}
+
+
+// INPUT
+// READ
+
+char DIO_READ_PORTx(char PORTx) {
+    switch (PORTx) {
+        case PORTx_A:
+            return PINA;
+        case PORTx_B:
+            return PINB;
+        case PORTx_C:
+            return PINC;
+        case PORTx_D:
+            return PIND;
+
+        default:
+            return 0;
+
+    }
+}
+
+char DIO_READ_PINx(char PORTx, char PINx) {
+    switch (PORTx) {
+        case PORTx_A:
+            return (PINA & (1 << PINx)); //?1:0;
+        case PORTx_B:
+            return (PINB & (1 << PINx)); //?1:0;
+        case PORTx_C:
+            return (PINC & (1 << PINx)); //?1:0;
+        case PORTx_D:
+            return (PIND & (1 << PINx)); //?1:0;
+        default:
+            return 0;
     }
 }

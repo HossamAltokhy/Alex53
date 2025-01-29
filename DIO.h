@@ -8,28 +8,33 @@
 #ifndef DIO_H
 #define	DIO_H
 
+#define PORTx_A     1
+#define PORTx_B     2
+#define PORTx_C     3
+#define PORTx_D     4
 
 
-#define PinOut   1
-#define PinIn    0
+#define OUTPUT      1
+#define INPUT       0
 
-#define ON   1
-#define OFF  0
+#define HIGH        1
+#define LOW         0
 
-void setPORTA_DIR(char PORT_DIR);
-void setPINA_DIR(char pinNum, char Pin_state);
+// Direction ?   input or output
+void DIO_DIR_PORTx(char PORTx, char PORT_DIR);
+void DIO_DIR_PINx(char PORTx, char PINx, char PIN_DIR);
+
+// OUTPUT
+// State ?  High or Low
+void DIO_SET_PORTx(char PORTx, char PORT_DATA);
+void DIO_SET_PINx(char PORTx, char PINx);
+void DIO_RESET_PINx(char PORTx, char PINx);
 
 
-void setPORTA_Val(char PORT_Val);
-void setPINA_Val(char pinNum, char Pin_state);
-
-void setPORTB_DIR(char PORT_DIR);
-void setPINB_DIR(char pinNum, char Pin_state);
-
-
-void setPORTB_Val(char PORT_Val);
-void setPINB_Val(char pinNum, char Pin_state);
-
+// INPUT
+// READ
+char DIO_READ_PORTx(char PORTx);
+char DIO_READ_PINx(char PORTx, char PINx);
 
 #endif	/* DIO_H */
 

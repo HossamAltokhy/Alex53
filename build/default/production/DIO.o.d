@@ -9,7 +9,7 @@ build/default/production/DIO.o.d build/default/production/DIO.o: DIO.c \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\common.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\version.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\fuse.h \
- c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\lock.h
+ c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\lock.h DIO.h
 
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\io.h:
 
@@ -32,3 +32,5 @@ c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\version.h:
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\fuse.h:
 
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\lock.h:
+
+DIO.h:

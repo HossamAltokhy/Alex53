@@ -9,6 +9,8 @@
 #define	BUZZER_H
 
 
+#define BUZZER PB0
+#define BUZZER_DIR PORTx_B
 
 void init_Buzzer();
 void Buzzer_ON();

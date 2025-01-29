@@ -1,5 +1,4 @@
-build/default/production/Buzzer.o.d build/default/production/Buzzer.o: \
- Buzzer.c DIO.h \
+build/default/production/LED.o.d build/default/production/LED.o: LED.c \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\io.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\sfr_defs.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\inttypes.h \
@@ -10,12 +9,8 @@ build/default/production/Buzzer.o.d build/default/production/Buzzer.o: \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\common.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\version.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\fuse.h \
- c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\lock.h \
- c:\program\ files\microchip\xc8\v2.32\avr\avr\include\util\delay.h \
- c:\program\ files\microchip\xc8\v2.32\avr\avr\include\util\delay_basic.h \
- c:\program\ files\microchip\xc8\v2.32\avr\avr\include\math.h Buzzer.h
-
-DIO.h:
+ c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\lock.h DIO.h \
+ LED.h
 
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\io.h:
 
@@ -39,10 +34,6 @@ c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\fuse.h:
 
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\lock.h:
 
-c:\program\ files\microchip\xc8\v2.32\avr\avr\include\util\delay.h:
+DIO.h:
 
-c:\program\ files\microchip\xc8\v2.32\avr\avr\include\util\delay_basic.h:
-
-c:\program\ files\microchip\xc8\v2.32\avr\avr\include\math.h:
-
-Buzzer.h:
+LED.h:

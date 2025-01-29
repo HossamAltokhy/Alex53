@@ -4,21 +4,22 @@
 
 #define F_CPU 16000000UL
 #include <util/delay.h>
+#include "DIO.h"
+#include "Buzzer.h"
 
-#define BUZZER PB0
 
 void init_Buzzer(){
-    setPINB_DIR(BUZZER, PinOut);
+    DIO_DIR_PINx(BUZZER_DIR, BUZZER, OUTPUT);
 }
 void Buzzer_ON(){
-    setPINB_Val(BUZZER, ON);
+    DIO_SET_PINx(BUZZER_DIR, BUZZER);
 }
 void Buzzer_OFF(){
-    setPINB_Val(BUZZER, OFF);
+    DIO_RESET_PINx(BUZZER_DIR, BUZZER);
 }
 void Buzzer_Alarm(){
-    setPINB_Val(BUZZER, ON);
+    DIO_SET_PINx(BUZZER_DIR, BUZZER);
     _delay_ms(500);
-    setPINB_Val(BUZZER, OFF);
+    DIO_RESET_PINx(BUZZER_DIR, BUZZER);
     _delay_ms(500);
 }
