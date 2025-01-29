@@ -23,6 +23,8 @@
 #define LED4_DIR    PORTx_D
 
 
+#define ALL_LEDs 8
+
 
 void init_LEDs();
 void LED_ON(char LED);
