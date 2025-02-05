@@ -1,5 +1,7 @@
 
 #include <avr/io.h>
+#define F_CPU 16000000UL
+#include <util/delay.h>
 #include "DIO.h"
 
 
@@ -20,6 +22,7 @@ void DIO_DIR_PORTx(char PORTx, char PORT_DIR) {
             DDRD = PORT_DIR;
             break;
     }
+//    _delay_ms(500);
 }
 
 void DIO_DIR_PINx(char PORTx, char PINx, char PIN_DIR) {
@@ -30,7 +33,6 @@ void DIO_DIR_PINx(char PORTx, char PINx, char PIN_DIR) {
             } else {
                 DDRA &= ~(1 << PINx);
             }
-
             break;
         case PORTx_B:
             if (PIN_DIR) {
@@ -54,6 +56,7 @@ void DIO_DIR_PINx(char PORTx, char PINx, char PIN_DIR) {
             }
             break;
     }
+//    _delay_ms(500);
 }
 
 // OUTPUT
@@ -63,6 +66,7 @@ void DIO_SET_PORTx(char PORTx, char PORT_DATA) {
     switch (PORTx) {
         case PORTx_A:
             PORTA = PORT_DATA;
+//            _delay_ms(50);
             break;
         case PORTx_B:
             PORTB = PORT_DATA;
@@ -74,6 +78,7 @@ void DIO_SET_PORTx(char PORTx, char PORT_DATA) {
             PORTD = PORT_DATA;
             break;
     }
+    
 }
 
 void DIO_SET_PINx(char PORTx, char PINx) {
@@ -116,6 +121,7 @@ void DIO_RESET_PINx(char PORTx, char PINx) {
     switch (PORTx) {
         case PORTx_A:
             PORTA &= ~(1 << PINx);
+//            _delay_ms(50);
             break;
         case PORTx_B:
             PORTB &= ~(1 << PINx);
@@ -127,6 +133,7 @@ void DIO_RESET_PINx(char PORTx, char PINx) {
             PORTD &= ~(1 << PINx);
             break;
     }
+//    _delay_ms(500);
 }
 
 

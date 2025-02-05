@@ -17,6 +17,9 @@
 #define OUTPUT      1
 #define INPUT       0
 
+#define OUTPUT_PORT      0xFF
+#define INPUT_PORT       0x00
+
 #define HIGH        1
 #define LOW         0
 

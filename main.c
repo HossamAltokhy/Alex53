@@ -14,25 +14,38 @@
 #include "DIO.h"
 #include "Buzzer.h"
 #include "LED.h"
-
-#define LED_GREEN   0
+#include "VButtons.h"
+#include "_7SEG.h"
 
 int main(void) {
     /* Replace with your application code */
+    // initializations
 
-    init_Buzzer();
-    init_LEDs();
+    init_7SEG();
+    _delay_ms(500);
+    
+    
+    DDRB |= (1<<PB1)|(1<<PB2);
+    PORTB |= (1<<PB1)|(1<<PB2);
+    int x =0;
+    
     
     while (1) {
 
-        Buzzer_Alarm();
-        LED_TOG(LED1);
-        Buzzer_Alarm();
-        LED_TOG(LED2);
-        Buzzer_Alarm();
-        LED_TOG(LED3);
-        Buzzer_Alarm();
-        LED_TOG(LED4);
+        
+        
+        
+        _7SEG_1_write(1);
+        
+//        _delay_ms(10);
+        
+        _7SEG_2_write(2);
+//        _delay_ms(10);
+        
+
+        
        
+        
     }
 }
+

@@ -7,6 +7,8 @@
       <itemPath>DIO.h</itemPath>
       <itemPath>Buzzer.h</itemPath>
       <itemPath>LED.h</itemPath>
+      <itemPath>VButtons.h</itemPath>
+      <itemPath>_7SEG.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -19,6 +21,8 @@
       <itemPath>DIO.c</itemPath>
       <itemPath>Buzzer.c</itemPath>
       <itemPath>LED.c</itemPath>
+      <itemPath>VButtons.c</itemPath>
+      <itemPath>_7SEG.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
