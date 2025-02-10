@@ -13,7 +13,7 @@ build/default/production/main.o.d build/default/production/main.o: main.c \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\version.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\fuse.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\lock.h DIO.h \
- Buzzer.h LED.h VButtons.h _7SEG.h
+ Buzzer.h LED.h VButtons.h _7SEG.h LCD8.h
 
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\util\delay.h:
 
@@ -52,3 +52,5 @@ LED.h:
 VButtons.h:
 
 _7SEG.h:
+
+LCD8.h:

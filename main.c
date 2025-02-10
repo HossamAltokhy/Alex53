@@ -16,41 +16,30 @@
 #include "LED.h"
 #include "VButtons.h"
 #include "_7SEG.h"
+#include "LCD8.h"
 
 int main(void) {
     /* Replace with your application code */
     // initializations
 
-    init_7SEG();
-    _delay_ms(500);
-    
-    
-    DDRB  |= (1<<PB1)|(1<<PB2);
-    PORTB |= (1<<PB1)|(1<<PB2);
+    char str[] = "475";
+    init_LCD8();
 
     
-    int x = 17;
+    int x = 100;
     
-    int counter = 0;
     while (1) {
-       
 
-        _7SEG_write(x);
-        counter++;
-        
-        
-        if(counter == 100){
-            x++;
-            counter = 0;
-        }
-        
-        
-        if(x >99){
-            x=0;
-        }
-        
-        
-   
+        LCD8_clear();
+        LCD8_num(x);
+        _delay_ms(1000);
+        x++;
+
+
+
+
+
+
     }
 }
 
