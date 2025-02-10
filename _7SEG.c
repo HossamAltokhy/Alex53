@@ -37,21 +37,23 @@ void init_7SEG() {
 }
 
 void _7SEG_1_ON(){
+    _7SEG_2_OFF();
     DIO_SET_PINx(_7SEG_EN_DIR, _7SEG_1_EN);
-    _delay_ms(2);
+//    _delay_ms(1);
 }
 void _7SEG_2_ON(){
+    _7SEG_1_OFF();
     DIO_SET_PINx(_7SEG_EN_DIR, _7SEG_2_EN);
-    _delay_ms(2);
+//    _delay_ms(1);
 }
 
 void _7SEG_1_OFF(){
     DIO_RESET_PINx(_7SEG_EN_DIR, _7SEG_1_EN);
-    _delay_ms(2);
+//    _delay_ms(1);
 }
 void _7SEG_2_OFF(){
     DIO_RESET_PINx(_7SEG_EN_DIR, _7SEG_2_EN);
-    _delay_ms(2);
+//    _delay_ms(1);
 }
 void _7SEG_ALL_OFF(){
    
@@ -62,21 +64,22 @@ void _7SEG_ALL_OFF(){
 void _7SEG_1_write(int val){
     _7SEG_2_OFF();
     
+    _delay_us(200);
     PORTA = 0x00;
-    _delay_ms(1);
     DIO_SET_PORTx(_7SEG_DIR, num[val]);
     _delay_ms(1);
     _7SEG_1_ON();
-    _delay_ms(2);
+    _delay_us(200);
 }
 void _7SEG_2_write(int val){
     _7SEG_1_OFF();
     PORTA = 0x00;
-    _delay_ms(1);
+    _delay_us(200);
+    PORTA = 0x00;
     DIO_SET_PORTx(_7SEG_DIR, num[val]);
     _delay_ms(1);
     _7SEG_2_ON();
-    _delay_ms(2);
+    _delay_us(200);
 }
 
 void _7SEG_write(int num){

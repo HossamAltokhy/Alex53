@@ -25,27 +25,17 @@ int main(void) {
     _delay_ms(500);
     
     
-    DDRB |= (1<<PB1)|(1<<PB2);
+    DDRB  |= (1<<PB1)|(1<<PB2);
     PORTB |= (1<<PB1)|(1<<PB2);
-    int x =0;
+
     
     
     while (1) {
-
-        
-        
-        
-        _7SEG_1_write(1);
-        
-//        _delay_ms(10);
-        
-        _7SEG_2_write(2);
-//        _delay_ms(10);
-        
-
-        
        
-        
+        _7SEG_1_write(1);
+                
+        _7SEG_2_write(2);
+   
     }
 }
 
