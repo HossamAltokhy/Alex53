@@ -63,9 +63,8 @@ void _7SEG_ALL_OFF(){
 
 void _7SEG_1_write(int val){
     _7SEG_2_OFF();
-    
-    _delay_us(200);
     PORTA = 0x00;
+    _delay_us(200);
     DIO_SET_PORTx(_7SEG_DIR, num[val]);
     _delay_ms(1);
     _7SEG_1_ON();
@@ -75,7 +74,6 @@ void _7SEG_2_write(int val){
     _7SEG_1_OFF();
     PORTA = 0x00;
     _delay_us(200);
-    PORTA = 0x00;
     DIO_SET_PORTx(_7SEG_DIR, num[val]);
     _delay_ms(1);
     _7SEG_2_ON();
@@ -83,5 +81,12 @@ void _7SEG_2_write(int val){
 }
 
 void _7SEG_write(int num){
+    
+    int x, y;
+    x = num/10;
+    y = num%10;
+    
+    _7SEG_1_write(x);
+    _7SEG_2_write(y);
     
 }

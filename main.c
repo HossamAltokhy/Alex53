@@ -29,12 +29,27 @@ int main(void) {
     PORTB |= (1<<PB1)|(1<<PB2);
 
     
+    int x = 17;
     
+    int counter = 0;
     while (1) {
        
-        _7SEG_1_write(1);
-                
-        _7SEG_2_write(2);
+
+        _7SEG_write(x);
+        counter++;
+        
+        
+        if(counter == 100){
+            x++;
+            counter = 0;
+        }
+        
+        
+        if(x >99){
+            x=0;
+        }
+        
+        
    
     }
 }
