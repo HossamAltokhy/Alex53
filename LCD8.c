@@ -70,3 +70,10 @@ void LCD8_num(int num){
     itoa(num, num_str, 10);
     LCD8_str(num_str);
 }
+
+void LCD8_goto(int x, int y){
+    
+    LCD8_cmd((0x80+y) | (x<<6));
+    
+    
+}

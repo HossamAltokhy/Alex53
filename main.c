@@ -31,6 +31,7 @@ int main(void) {
     while (1) {
 
         LCD8_clear();
+        LCD8_goto(0,1);
         LCD8_num(x);
         _delay_ms(1000);
         x++;
