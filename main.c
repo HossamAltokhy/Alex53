@@ -21,22 +21,35 @@
 int main(void) {
     /* Replace with your application code */
     // initializations
-
-    char str[] = "475";
-    init_LCD4();
-
+    init_LEDs();
+    DIO_DIR_PINx(PORTx_D, PD2, INPUT);
+    DIO_DIR_PINx(PORTx_D, PD3, INPUT);
+    DIO_DIR_PINx(PORTx_D, PD7, INPUT);
     
-    int x = 100;
-    
+  
     while (1) {
 
-        LCD4_clear();
-        LCD4_goto(0,1);
-        LCD4_num(x);
-        _delay_ms(1000);
-        x++;
-
-
+      
+        if(DIO_READ_PINx(PORTx_D, PD2)){
+            LED_OFF(LED1);
+        }
+        else{
+            LED_ON(LED1);
+        }
+        
+        if(DIO_READ_PINx(PORTx_D, PD3)){
+            LED_OFF(LED2);
+        }
+        else{
+            LED_ON(LED2);
+        }
+        
+        if(DIO_READ_PINx(PORTx_D, PD7)){
+            LED_OFF(LED3);
+        }
+        else{
+            LED_ON(LED3);
+        }
 
 
 

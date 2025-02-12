@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c DIO.c Buzzer.c LED.c VButtons.c _7SEG.c LCD8.c LCD4.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c DIO.c Buzzer.c LED.c VButtons.c _7SEG.c LCD8.c LCD4.c Button.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/Buzzer.o ${OBJECTDIR}/LED.o ${OBJECTDIR}/VButtons.o ${OBJECTDIR}/_7SEG.o ${OBJECTDIR}/LCD8.o ${OBJECTDIR}/LCD4.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/DIO.o.d ${OBJECTDIR}/Buzzer.o.d ${OBJECTDIR}/LED.o.d ${OBJECTDIR}/VButtons.o.d ${OBJECTDIR}/_7SEG.o.d ${OBJECTDIR}/LCD8.o.d ${OBJECTDIR}/LCD4.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/Buzzer.o ${OBJECTDIR}/LED.o ${OBJECTDIR}/VButtons.o ${OBJECTDIR}/_7SEG.o ${OBJECTDIR}/LCD8.o ${OBJECTDIR}/LCD4.o ${OBJECTDIR}/Button.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/DIO.o.d ${OBJECTDIR}/Buzzer.o.d ${OBJECTDIR}/LED.o.d ${OBJECTDIR}/VButtons.o.d ${OBJECTDIR}/_7SEG.o.d ${OBJECTDIR}/LCD8.o.d ${OBJECTDIR}/LCD4.o.d ${OBJECTDIR}/Button.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/Buzzer.o ${OBJECTDIR}/LED.o ${OBJECTDIR}/VButtons.o ${OBJECTDIR}/_7SEG.o ${OBJECTDIR}/LCD8.o ${OBJECTDIR}/LCD4.o
+OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/Buzzer.o ${OBJECTDIR}/LED.o ${OBJECTDIR}/VButtons.o ${OBJECTDIR}/_7SEG.o ${OBJECTDIR}/LCD8.o ${OBJECTDIR}/LCD4.o ${OBJECTDIR}/Button.o
 
 # Source Files
-SOURCEFILES=main.c DIO.c Buzzer.c LED.c VButtons.c _7SEG.c LCD8.c LCD4.c
+SOURCEFILES=main.c DIO.c Buzzer.c LED.c VButtons.c _7SEG.c LCD8.c LCD4.c Button.c
 
 
 
@@ -142,6 +142,12 @@ ${OBJECTDIR}/LCD4.o: LCD4.c  .generated_files/flags/default/4808e9aba969474e2e4c
 	@${RM} ${OBJECTDIR}/LCD4.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/LCD4.o.d" -MT "${OBJECTDIR}/LCD4.o.d" -MT ${OBJECTDIR}/LCD4.o -o ${OBJECTDIR}/LCD4.o LCD4.c 
 	
+${OBJECTDIR}/Button.o: Button.c  .generated_files/flags/default/b680463ed3f1da5dea74fda2d480d3bc6377a200 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Button.o.d 
+	@${RM} ${OBJECTDIR}/Button.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/Button.o.d" -MT "${OBJECTDIR}/Button.o.d" -MT ${OBJECTDIR}/Button.o -o ${OBJECTDIR}/Button.o Button.c 
+	
 else
 ${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/3ced5658ff3ce8082de9a2a39d20c7c9b5454d68 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
 	@${MKDIR} "${OBJECTDIR}" 
@@ -190,6 +196,12 @@ ${OBJECTDIR}/LCD4.o: LCD4.c  .generated_files/flags/default/8ccdba09b41bf5d4bcc2
 	@${RM} ${OBJECTDIR}/LCD4.o.d 
 	@${RM} ${OBJECTDIR}/LCD4.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/LCD4.o.d" -MT "${OBJECTDIR}/LCD4.o.d" -MT ${OBJECTDIR}/LCD4.o -o ${OBJECTDIR}/LCD4.o LCD4.c 
+	
+${OBJECTDIR}/Button.o: Button.c  .generated_files/flags/default/9df50dc4b64f8e4aea5ac681409c4ea5a8680e5e .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Button.o.d 
+	@${RM} ${OBJECTDIR}/Button.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/Button.o.d" -MT "${OBJECTDIR}/Button.o.d" -MT ${OBJECTDIR}/Button.o -o ${OBJECTDIR}/Button.o Button.c 
 	
 endif
 
