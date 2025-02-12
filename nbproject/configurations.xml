@@ -12,6 +12,7 @@
       <itemPath>LCD8.h</itemPath>
       <itemPath>LCD4.h</itemPath>
       <itemPath>Button.h</itemPath>
+      <itemPath>keypad.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -29,6 +30,7 @@
       <itemPath>LCD8.c</itemPath>
       <itemPath>LCD4.c</itemPath>
       <itemPath>Button.c</itemPath>
+      <itemPath>keypad.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

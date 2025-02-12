@@ -10,5 +10,5 @@ void init_BTNs(){
 }
 int BTNs_isPressed(char BTN){
     
-    
+    return 0;
 }

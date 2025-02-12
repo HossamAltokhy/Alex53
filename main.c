@@ -17,41 +17,40 @@
 #include "VButtons.h"
 #include "_7SEG.h"
 #include "LCD4.h"
+#include "keypad.h"
 
 int main(void) {
     /* Replace with your application code */
     // initializations
     init_LEDs();
-    DIO_DIR_PINx(PORTx_D, PD2, INPUT);
-    DIO_DIR_PINx(PORTx_D, PD3, INPUT);
-    DIO_DIR_PINx(PORTx_D, PD7, INPUT);
+    init_LCD4();
     
-  
+    
+    init_Keypad();
     while (1) {
 
-      
-        if(DIO_READ_PINx(PORTx_D, PD2)){
-            LED_OFF(LED1);
-        }
-        else{
-            LED_ON(LED1);
-        }
+//        LCD4_clear();
+        LCD4_num(getKey());
+        _delay_ms(200);
         
-        if(DIO_READ_PINx(PORTx_D, PD3)){
-            LED_OFF(LED2);
-        }
-        else{
-            LED_ON(LED2);
-        }
-        
-        if(DIO_READ_PINx(PORTx_D, PD7)){
-            LED_OFF(LED3);
-        }
-        else{
-            LED_ON(LED3);
-        }
-
-
+//        int x = getKey();
+//        
+//        if(x == 3){
+//            LED_OFF(ALL_LEDs);
+//            LED_ON(LED1);
+//        }
+//        else if(x==6){
+//            LED_OFF(ALL_LEDs);
+//            LED_ON(LED2);
+//        }
+//        else if(x==9){
+//            LED_OFF(ALL_LEDs);
+//            LED_ON(LED3);
+//        }
+//        else{
+//            LED_OFF(ALL_LEDs);
+//            LED_ON(LED4);
+//        }
 
 
     }
