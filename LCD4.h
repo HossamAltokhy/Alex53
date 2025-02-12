@@ -17,6 +17,11 @@
 #define LCD_DATA    PORTx_A
 #define LCD4_DATA    PORTA
 
+#define LCD4_D4      PA4
+#define LCD4_D5      PA5
+#define LCD4_D6      PA6
+#define LCD4_D7      PA7
+
 #define LCD_EN_DIR  PORTx_B      
 #define LCD_RS_DIR  PORTx_B      
 //#define LCD_RW_DIR  PORTx_B

@@ -9,10 +9,10 @@
 
 void init_LCD4(){
     // DIO
-    DIO_DIR_PINx(LCD_DIR, 4,OUTPUT);
-    DIO_DIR_PINx(LCD_DIR, 5,OUTPUT);
-    DIO_DIR_PINx(LCD_DIR, 6,OUTPUT);
-    DIO_DIR_PINx(LCD_DIR, 7,OUTPUT);
+    DIO_DIR_PINx(LCD_DIR, LCD4_D4,OUTPUT);
+    DIO_DIR_PINx(LCD_DIR, LCD4_D5,OUTPUT);
+    DIO_DIR_PINx(LCD_DIR, LCD4_D6,OUTPUT);
+    DIO_DIR_PINx(LCD_DIR, LCD4_D7,OUTPUT);
     
     DIO_DIR_PINx(LCD_EN_DIR, LCD_EN, OUTPUT);
     DIO_DIR_PINx(LCD_RS_DIR, LCD_RS, OUTPUT);
@@ -42,6 +42,7 @@ void init_LCD4(){
 
 void LCD4_cmd(char cmd){
     DIO_RESET_PINx(LCD_RS_DIR, LCD_RS);
+    
     LCD4_DATA = (cmd & 0xF0)| (LCD4_DATA & 0x0F); 
     LCD4_EN();
     LCD4_DATA = (cmd<<4)| (LCD4_DATA & 0x0F);
