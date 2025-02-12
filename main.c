@@ -16,23 +16,23 @@
 #include "LED.h"
 #include "VButtons.h"
 #include "_7SEG.h"
-#include "LCD8.h"
+#include "LCD4.h"
 
 int main(void) {
     /* Replace with your application code */
     // initializations
 
     char str[] = "475";
-    init_LCD8();
+    init_LCD4();
 
     
     int x = 100;
     
     while (1) {
 
-        LCD8_clear();
-        LCD8_goto(0,1);
-        LCD8_num(x);
+        LCD4_clear();
+        LCD4_goto(0,1);
+        LCD4_num(x);
         _delay_ms(1000);
         x++;
 
