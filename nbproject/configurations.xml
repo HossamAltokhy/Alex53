@@ -13,6 +13,8 @@
       <itemPath>LCD4.h</itemPath>
       <itemPath>Button.h</itemPath>
       <itemPath>keypad.h</itemPath>
+      <itemPath>EXT_INT.h</itemPath>
+      <itemPath>ADC.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -31,6 +33,8 @@
       <itemPath>LCD4.c</itemPath>
       <itemPath>Button.c</itemPath>
       <itemPath>keypad.c</itemPath>
+      <itemPath>EXT_INT.c</itemPath>
+      <itemPath>ADC.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

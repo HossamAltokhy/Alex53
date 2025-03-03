@@ -18,70 +18,29 @@
 #include "_7SEG.h"
 #include "LCD4.h"
 #include "keypad.h"
+#include "EXT_INT.h"
 
+ISR(INT0_vect) {
+    // Code INT0
 
-
-#define LOW_LEVEL    0  // 11
-#define ANY_L_CHANGE  1  // 11
-#define FALLING_EDGE   2 // 11
-#define RISING_EDGE  3  // 11
-
-ISR(INT0_vect){
-    
-    
-    LED_TOG(ALL_LEDs);
+    LED_TOG(LED1);
     
 }
 
 
-void init_INT0(char INT_MODE);
-void init_INT1(char INT_MODE);
 
 int main(void) {
     /* Replace with your application code */
     // initializations
-
     init_LEDs();
     
-    init_INT0();
-    
-    // Enable Global Interrupt bit (SEI)
+    init_INT0(Falling_Edge);
+
+    // Set Enable Interrupt (Global)
     sei();
+
     while (1) {
 
 
     }
 }
-
-
-void init_INT0(char INT_MODE){
-    
-    // Select MODE
-    MCUCR &= ~((1<<ISC01)|(1<<ISC00));
-    MCUCR |= INT_MODE;
-//    switch(INT_MODE){
-//        case RISING_EDGE:
-//            
-//            break;
-//    }
-    // Enable Individual INT0
-    GICR |= (1<<INT0);
-    
-    
-}
-void init_INT1(char INT_MODE){
-    
-    // Select MODE
-    MCUCR &= ~((1<<ISC11)|(1<<ISC10));
-    MCUCR |= (INT_MODE<<2);
-//    switch(INT_MODE){
-//        case RISING_EDGE:
-//            
-//            break;
-//    }
-    // Enable Individual INT0
-    GICR |= (1<<INT1);
-    
-    
-}
-
