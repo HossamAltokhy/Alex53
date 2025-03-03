@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c DIO.c Buzzer.c LED.c VButtons.c _7SEG.c LCD8.c LCD4.c Button.c keypad.c EXT_INT.c ADC.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c DIO.c Buzzer.c LED.c VButtons.c _7SEG.c LCD8.c LCD4.c Button.c keypad.c EXT_INT.c ADC.c LM35.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/Buzzer.o ${OBJECTDIR}/LED.o ${OBJECTDIR}/VButtons.o ${OBJECTDIR}/_7SEG.o ${OBJECTDIR}/LCD8.o ${OBJECTDIR}/LCD4.o ${OBJECTDIR}/Button.o ${OBJECTDIR}/keypad.o ${OBJECTDIR}/EXT_INT.o ${OBJECTDIR}/ADC.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/DIO.o.d ${OBJECTDIR}/Buzzer.o.d ${OBJECTDIR}/LED.o.d ${OBJECTDIR}/VButtons.o.d ${OBJECTDIR}/_7SEG.o.d ${OBJECTDIR}/LCD8.o.d ${OBJECTDIR}/LCD4.o.d ${OBJECTDIR}/Button.o.d ${OBJECTDIR}/keypad.o.d ${OBJECTDIR}/EXT_INT.o.d ${OBJECTDIR}/ADC.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/Buzzer.o ${OBJECTDIR}/LED.o ${OBJECTDIR}/VButtons.o ${OBJECTDIR}/_7SEG.o ${OBJECTDIR}/LCD8.o ${OBJECTDIR}/LCD4.o ${OBJECTDIR}/Button.o ${OBJECTDIR}/keypad.o ${OBJECTDIR}/EXT_INT.o ${OBJECTDIR}/ADC.o ${OBJECTDIR}/LM35.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/DIO.o.d ${OBJECTDIR}/Buzzer.o.d ${OBJECTDIR}/LED.o.d ${OBJECTDIR}/VButtons.o.d ${OBJECTDIR}/_7SEG.o.d ${OBJECTDIR}/LCD8.o.d ${OBJECTDIR}/LCD4.o.d ${OBJECTDIR}/Button.o.d ${OBJECTDIR}/keypad.o.d ${OBJECTDIR}/EXT_INT.o.d ${OBJECTDIR}/ADC.o.d ${OBJECTDIR}/LM35.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/Buzzer.o ${OBJECTDIR}/LED.o ${OBJECTDIR}/VButtons.o ${OBJECTDIR}/_7SEG.o ${OBJECTDIR}/LCD8.o ${OBJECTDIR}/LCD4.o ${OBJECTDIR}/Button.o ${OBJECTDIR}/keypad.o ${OBJECTDIR}/EXT_INT.o ${OBJECTDIR}/ADC.o
+OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/Buzzer.o ${OBJECTDIR}/LED.o ${OBJECTDIR}/VButtons.o ${OBJECTDIR}/_7SEG.o ${OBJECTDIR}/LCD8.o ${OBJECTDIR}/LCD4.o ${OBJECTDIR}/Button.o ${OBJECTDIR}/keypad.o ${OBJECTDIR}/EXT_INT.o ${OBJECTDIR}/ADC.o ${OBJECTDIR}/LM35.o
 
 # Source Files
-SOURCEFILES=main.c DIO.c Buzzer.c LED.c VButtons.c _7SEG.c LCD8.c LCD4.c Button.c keypad.c EXT_INT.c ADC.c
+SOURCEFILES=main.c DIO.c Buzzer.c LED.c VButtons.c _7SEG.c LCD8.c LCD4.c Button.c keypad.c EXT_INT.c ADC.c LM35.c
 
 
 
@@ -166,6 +166,12 @@ ${OBJECTDIR}/ADC.o: ADC.c  .generated_files/flags/default/e7d45ecb5c88cc4a0e11a6
 	@${RM} ${OBJECTDIR}/ADC.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/ADC.o.d" -MT "${OBJECTDIR}/ADC.o.d" -MT ${OBJECTDIR}/ADC.o -o ${OBJECTDIR}/ADC.o ADC.c 
 	
+${OBJECTDIR}/LM35.o: LM35.c  .generated_files/flags/default/24cc4f011185ee3903c6c7f8c4174f99197038a6 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/LM35.o.d 
+	@${RM} ${OBJECTDIR}/LM35.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/LM35.o.d" -MT "${OBJECTDIR}/LM35.o.d" -MT ${OBJECTDIR}/LM35.o -o ${OBJECTDIR}/LM35.o LM35.c 
+	
 else
 ${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/3ced5658ff3ce8082de9a2a39d20c7c9b5454d68 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
 	@${MKDIR} "${OBJECTDIR}" 
@@ -238,6 +244,12 @@ ${OBJECTDIR}/ADC.o: ADC.c  .generated_files/flags/default/22a2233bb007210b4c6ffa
 	@${RM} ${OBJECTDIR}/ADC.o.d 
 	@${RM} ${OBJECTDIR}/ADC.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/ADC.o.d" -MT "${OBJECTDIR}/ADC.o.d" -MT ${OBJECTDIR}/ADC.o -o ${OBJECTDIR}/ADC.o ADC.c 
+	
+${OBJECTDIR}/LM35.o: LM35.c  .generated_files/flags/default/127d7bc1fd0967c4dbbb8466227e89d12201b8c9 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/LM35.o.d 
+	@${RM} ${OBJECTDIR}/LM35.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/LM35.o.d" -MT "${OBJECTDIR}/LM35.o.d" -MT ${OBJECTDIR}/LM35.o -o ${OBJECTDIR}/LM35.o LM35.c 
 	
 endif
 

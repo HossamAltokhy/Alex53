@@ -27,7 +27,7 @@ void ADC_disable() {
 
 void ADC_select_CH(char ADC_CH) {
     // ADMUX (MUX4:0)
-    ADMUX &= 0xE0 // 11100000
+    ADMUX &= 0xE0; // 11100000
     // ADMUX &= ~((1<<MUX4)|(1<<MUX3)|(1<<MUX2)|(1<<MUX1)|(1 << MUX0));
     ADMUX |= ADC_CH;
 }
@@ -54,6 +54,6 @@ void ADC_wait(){
 
 int ADC_read(){
     
-    // ????
-    return ADCW;
+    // ???? in milli Volt
+    return ADCW*ADC_step;
 }

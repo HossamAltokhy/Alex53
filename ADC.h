@@ -32,6 +32,8 @@
 #define ADC_REF_AREF             0
 #define ADC_REF_AVCC             1
 #define ADC_REF_INTERNAL_2_56V   3
+
+#define ADC_step 4.8875855327468230694037145650049
 /**
  * select CH,
  * select Freq,
@@ -48,7 +50,7 @@ void ADC_select_REF(char ADC_REF);
 
 void ADC_SC();
 void ADC_wait();
-
+int ADC_read();
 
 #endif	/* ADC_H */
 

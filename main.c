@@ -19,28 +19,38 @@
 #include "LCD4.h"
 #include "keypad.h"
 #include "EXT_INT.h"
-
-ISR(INT0_vect) {
-    // Code INT0
-
-    LED_TOG(LED1);
-    
-}
+#include "ADC.h"
+#include "LM35.h"
 
 
 
 int main(void) {
     /* Replace with your application code */
     // initializations
-    init_LEDs();
+   
+    init_LCD4();
     
-    init_INT0(Falling_Edge);
-
-    // Set Enable Interrupt (Global)
-    sei();
-
+//    init_ADC(ADC_CH0, ADC_PS_128, ADC_REF_AREF);
+    init_LM35(LM35_pin0);
+    
     while (1) {
 
+        
+        int x = LM35_read();
+        
+        LCD4_clear();
+        LCD4_goto(0,0);
+        LCD4_num(x);
+//        _delay_ms(5);
+        
+        LM35_CH(LM35_pin1);
 
+        int y = LM35_read();
+        
+        
+        LCD4_goto(1,0);
+        LCD4_num(y);
+        _delay_ms(200);
+        LM35_CH(LM35_pin0);
     }
 }
