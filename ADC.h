@@ -52,5 +52,7 @@ void ADC_SC();
 void ADC_wait();
 int ADC_read();
 
+void ADC_INT_enable();
+
 #endif	/* ADC_H */
 

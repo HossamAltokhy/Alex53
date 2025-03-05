@@ -17,8 +17,8 @@
 #define BTN2_DIR   PORTx_D
 #define BTN3_DIR   PORTx_D
 
-#define BTN1   PD2
-#define BTN2   PD3
+#define BTN1   PD0
+#define BTN2   PD1
 #define BTN3   PD7
 
 void init_BTNs();

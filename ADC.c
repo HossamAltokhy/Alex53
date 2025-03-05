@@ -57,3 +57,7 @@ int ADC_read(){
     // ???? in milli Volt
     return ADCW*ADC_step;
 }
+
+void ADC_INT_enable(){
+    ADCSRA |= (1<<ADIE);
+}

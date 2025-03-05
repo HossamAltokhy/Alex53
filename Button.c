@@ -5,10 +5,17 @@
 
 
 void init_BTNs(){
-    
+    DIO_DIR_PINx(BTN1_DIR, BTN1, INPUT);
+    DIO_DIR_PINx(BTN2_DIR, BTN2, INPUT);
     
 }
 int BTNs_isPressed(char BTN){
     
-    return 0;
+    if(DIO_READ_PINx(BTN1_DIR, BTN)){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+    
 }
