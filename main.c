@@ -23,69 +23,26 @@
 #include "Button.h"
 
 
-int result[4] = {0, 0, 0, 0};
-int index = 0;
 
-ISR(ADC_vect) {
-
-    // fact >>> ADIF == 1
-
-    char str[] = "Temp";
-    int oldValue = result[index];
-    result[index] = LM35_read();
-
-
-    if (oldValue != result[index]) {
-        LCD4_clear();
-        LCD4_str(str);
-        LCD4_num(index);
-        LCD4_write(':');
-        LCD4_num(result[index]);
-    }
-
-
-
-}
-
-int main(void) {
-    /* Replace with your application code */
-    // initializations
-
-    init_BTNs();
+int main(){
+    
+    
+    init_ADC(ADC_CH0_CH1_G1, ADC_PS_128, ADC_REF_AREF);
+    
     init_LCD4();
-
-
-    //    init_ADC(ADC_CH0, ADC_PS_128, ADC_REF_AREF);
-    init_LM35_with_INT(LM35_pin0);
-
-
-
-
-    // Enable Global Interrupt
-    sei();
-
-    while (1) {
-
-        if (BTNs_isPressed(BTN1)) {
-            if (index > 0)
-                index--;
-
-            LM35_CH(index);
-            _delay_ms(200);
-        } else if (BTNs_isPressed(BTN2)) {
-            if (index < 3)
-                index++;
-            LM35_CH(index);
-
-            _delay_ms(200);
-        } else {
-            ADC_SC();
-
-        }
-
-
-        _delay_ms(100);
-
-
+    
+    
+    while(1){
+        
+        ADC_SC();
+        int diff = ADC_read();
+        
+        
+        LCD4_clear();
+        LCD4_num(diff);
+        
+        _delay_ms(150);
     }
+    
+    return 0;
 }

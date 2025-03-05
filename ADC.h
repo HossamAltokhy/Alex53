@@ -18,6 +18,7 @@
 #define ADC_CH5    5
 #define ADC_CH6    6
 #define ADC_CH7    7
+#define ADC_CH0_CH1_G1  16
 
 
 //#define ADC_PS_2    0
