@@ -21,27 +21,34 @@
 #include "ADC.h"
 #include "LM35.h"
 #include "Button.h"
+#include "timers.h"
 
 
+ISR(TIMER0_OVF_vect){
+    
+    // 
+    static int count;
+    count++;
+    
+    if(count == 61){
+        LED_TOG(LED1);
+        count = 0;
+    }
+    
+    
+    
+}
 
 int main(){
     
+    init_LEDs();
     
-    init_ADC(ADC_CH0_CH1_G1, ADC_PS_128, ADC_REF_AREF);
+    init_timer0(TIMER_MODE_NORMAL, TIMER_CLOCK_SELECT_PS_1024);
     
-    init_LCD4();
-    
-    
+    sei();
     while(1){
         
-        ADC_SC();
-        int diff = ADC_read();
-        
-        
-        LCD4_clear();
-        LCD4_num(diff);
-        
-        _delay_ms(150);
+       
     }
     
     return 0;
