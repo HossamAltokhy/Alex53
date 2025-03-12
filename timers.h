@@ -29,6 +29,11 @@
 #define TIMER_CLOCK_SELECT_EXT_FALLING_EDGE      6
 #define TIMER_CLOCK_SELECT_EXT_RISING_EDGE       7
 
+
+#define CMP_MODE_TOGGLE   1
+#define CMP_MODE_CLEAR    2
+#define CMP_MODE_SET      3
+
 /**
  * 
  * @param TIMER_MODE
@@ -39,6 +44,7 @@
  * @param TIMER_CLOCK_SELECT
  */
 void init_timer0(char TIMER_MODE, char TIMER_CLOCK_SELECT);
-
+void Timer0_set_OCR0(char val);
+void Timer0_CTC_set_CMP(char CMP_MODE);
 #endif	/* TIMERS_H */
 
