@@ -67,4 +67,11 @@ void Timer0_CTC_set_CMP(char CMP_MODE){
     TCCR0 &= ~((1<<COM01)|(1<<COM00));
     TCCR0 |= CMP_MODE<<4;
 }
+void Timer0_PWM_set_CMP(char CMP_MODE){
+    // Set Direction of PIN OC0
+    DIO_DIR_PINx(PORTx_B, PB3, OUTPUT);
+    // Set Mode .. 
+    TCCR0 &= ~((1<<COM01)|(1<<COM00));
+    TCCR0 |= CMP_MODE<<4;
+}
 

@@ -67,32 +67,37 @@ int main() {
     init_BTNs();
     init_LCD4();
 
-    init_timer0(TIMER_MODE_CTC, TIMER_CLOCK_SELECT_PS_1024);
-    Timer0_set_OCR0(125);
-    Timer0_CTC_set_CMP(CMP_MODE_TOGGLE);
+    init_timer0(TIMER_MODE_FPWM, TIMER_CLOCK_SELECT_PS_1024);
+    Timer0_set_OCR0(5);
+    Timer0_PWM_set_CMP(CMP_MODE_PWM_CLEAR_SET);
 
     sei();
     while (1) {
 
-        if(BTNs_isPressed(BTN1)){
-            
-            if(OCR0 < 245){
-                OCR0 += 10;
-            }
-            _delay_ms(200);
-        }
-        if(BTNs_isPressed(BTN2)){
-            
-            if(OCR0 > 10){
-                OCR0 -= 10;
-            }
-            _delay_ms(200);
-        }
+//        if(BTNs_isPressed(BTN1)){
+//            
+//            if(OCR0 < 245){
+//                OCR0 += 5;
+//            }
+//            _delay_ms(200);
+//        }
+//        if(BTNs_isPressed(BTN2)){
+//            
+//            if(OCR0 > 10){
+//                OCR0 -= 5;
+//            }
+//            _delay_ms(200);
+//        }
+//        
+//        LCD4_clear();
+//        LCD4_num(OCR0);
+//        _delay_ms(50);
+//    }
         
-        LCD4_clear();
-        LCD4_num(OCR0);
-        _delay_ms(50);
+        OCR0 = 10; 
+        _delay_ms(1000);
+        OCR0 = 35;
+        _delay_ms(1000);
     }
-
     return 0;
 }
