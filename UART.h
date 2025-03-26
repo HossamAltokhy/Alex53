@@ -15,6 +15,7 @@
 // Baudrate xx bps
 
 void init_UART(int baudrate);
+void UART_RXCIE();
 void UART_send(char data);
 char UART_receive();
 void UART_send_str(char * str);

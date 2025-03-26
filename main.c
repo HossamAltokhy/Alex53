@@ -26,41 +26,16 @@
 #include "UART.h"
 
 
-//ISR(TIMER0_OVF_vect){
-
-int  sec,
-            min,
-            hour;
-ISR(TIMER0_COMP_vect) {
-
-    // 
-    static int count;
-           
-
-    count++;
-
-    // 1 second code
-    if (count == 125) {
-        sec++;
-        if (sec == 60) {
-            sec = 0;
-            min++;
-            if (min == 60) {
-                min = 0;
-                hour++;
-                if (hour == 24) {
-                    hour = 0;
-                }
-            }
-        }
-        count = 0;
+ISR(USART_RXC_vect){
+    
+    char data = UDR;
+    if(data == '\r'){
+        LCD4_clear();
     }
-
-
-
-
-
-
+    else{
+     LCD4_write(data);   
+    }
+    
 }
 
 
@@ -69,29 +44,26 @@ char str[]= "Hello Alex53\r";
 int main() {
 
     
-    init_LEDs();
-    
+    init_ADC(ADC_CH0, ADC_PS_128, ADC_REF_AREF);
+    init_LCD4();
+    DIO_DIR_PINx(PORTx_B, PB0, OUTPUT);
+    _delay_ms(50);
     init_UART(baudrate_9600);
+    UART_RXCIE();
     
-    char x = 0;
+    sei();
+    
     while (1) {
         
-        x = UART_receive();
-        switch(x){
-            case 'A':
-            case 'a':
-                LED_ON(ALL_LEDs);
-                break;
-            case 'B':
-            case 'b':
-                LED_OFF(ALL_LEDs);
-                break;
-            default:
-                //do nothing
-                break;
-        }
+        ADC_SC();
+        int data = ADC_read();
+        UART_send_num(data);
+        _delay_ms(200);
+        UART_send('\r');
+        _delay_ms(200);
         
-        _delay_ms(300);
+       
+        
     }
     return 0;
 }

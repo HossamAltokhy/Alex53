@@ -17,6 +17,13 @@ void init_UART(int baudrate){
     
     // Enable Both Tx&Rx.
     UCSRB |= (1<<RXEN)|(1<<TXEN);
+//    UCSRC = (1<<URSEL)|(1<<UMSEL);
+}
+
+void UART_RXCIE(){
+    
+    UCSRB |= (1<<RXCIE);
+    
 }
 void UART_send(char data){
     
