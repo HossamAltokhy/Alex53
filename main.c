@@ -23,6 +23,7 @@
 #include "Button.h"
 #define OCR0_Val    200
 #include "timers.h"
+#include "UART.h"
 
 
 //ISR(TIMER0_OVF_vect){
@@ -62,42 +63,35 @@ ISR(TIMER0_COMP_vect) {
 
 }
 
+
+char str[]= "Hello Alex53\r";
+
 int main() {
 
-    init_BTNs();
-    init_LCD4();
-
-    init_timer0(TIMER_MODE_FPWM, TIMER_CLOCK_SELECT_PS_1024);
-    Timer0_set_OCR0(5);
-    Timer0_PWM_set_CMP(CMP_MODE_PWM_CLEAR_SET);
-
-    sei();
+    
+    init_LEDs();
+    
+    init_UART(baudrate_9600);
+    
+    char x = 0;
     while (1) {
-
-//        if(BTNs_isPressed(BTN1)){
-//            
-//            if(OCR0 < 245){
-//                OCR0 += 5;
-//            }
-//            _delay_ms(200);
-//        }
-//        if(BTNs_isPressed(BTN2)){
-//            
-//            if(OCR0 > 10){
-//                OCR0 -= 5;
-//            }
-//            _delay_ms(200);
-//        }
-//        
-//        LCD4_clear();
-//        LCD4_num(OCR0);
-//        _delay_ms(50);
-//    }
         
-        OCR0 = 10; 
-        _delay_ms(1000);
-        OCR0 = 35;
-        _delay_ms(1000);
+        x = UART_receive();
+        switch(x){
+            case 'A':
+            case 'a':
+                LED_ON(ALL_LEDs);
+                break;
+            case 'B':
+            case 'b':
+                LED_OFF(ALL_LEDs);
+                break;
+            default:
+                //do nothing
+                break;
+        }
+        
+        _delay_ms(300);
     }
     return 0;
 }
