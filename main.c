@@ -24,43 +24,22 @@
 #define OCR0_Val    200
 #include "timers.h"
 #include "UART.h"
+#include "SPI.h"
 
 
-ISR(USART_RXC_vect){
-    
-    char data = UDR;
-    if(data == '\r'){
-        LCD4_clear();
-    }
-    else{
-     LCD4_write(data);   
-    }
-    
-}
-
-
-char str[]= "Hello Alex53\r";
 
 int main() {
 
+    char x = 0;
     
-    init_ADC(ADC_CH0, ADC_PS_128, ADC_REF_AREF);
-    init_LCD4();
-    DIO_DIR_PINx(PORTx_B, PB0, OUTPUT);
-    _delay_ms(50);
-    init_UART(baudrate_9600);
-    UART_RXCIE();
+    init_SPI(SPI_MASTER);
     
-    sei();
-    
+    _delay_ms(100);
     while (1) {
         
-        ADC_SC();
-        int data = ADC_read();
-        UART_send_num(data);
         _delay_ms(200);
-        UART_send('\r');
-        _delay_ms(200);
+        SPI_write(x);
+        x++;
         
        
         
