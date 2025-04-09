@@ -25,24 +25,29 @@
 #include "timers.h"
 #include "UART.h"
 #include "SPI.h"
+#include "25AA020A.h"
 
 
 
 int main() {
 
-    char x = 0;
+    char data = 0;
+    DDRA = 0xFF;
+    _delay_ms(20);
     
-    init_SPI(SPI_MASTER);
+    init_MEM_25AA020();
     
-    _delay_ms(100);
+    MEM_25AA020_WREN();
+    
+    
+    
     while (1) {
         
-        _delay_ms(200);
-        SPI_write(x);
-        x++;
+        data  = MEM_25AA020_read(0x07);
         
+        PORTA = data;
        
-        
+        MEM_25AA020_write(0x07, 0xAA);        
     }
     return 0;
 }
