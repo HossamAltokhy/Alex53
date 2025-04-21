@@ -26,28 +26,31 @@
 #include "UART.h"
 #include "SPI.h"
 #include "25AA020A.h"
+#include "TWI.h"
 
+#define OWN_ADDRESS 0x03 
 
+// SLAVE Address 0x07 ,, R =1 , W =0
+#define SLA1_W     0x0E  // 00001110
+#define SLA1_R     0x0F
+// SLAVE Address 0x07 ,, R =1 , W =0
+#define SLA2_W     0x10  // 00010000
+#define SLA2_R     0x11
 
 int main() {
 
-    char data = 0;
+
     DDRA = 0xFF;
     _delay_ms(20);
+    init_TWI(OWN_ADDRESS); // 00000011
+
+    _delay_ms(50);
     
-    init_MEM_25AA020();
-    
-    MEM_25AA020_WREN();
-    
-    
+    PORTA = TWI_MR(SLA1_R);
     
     while (1) {
-        
-        data  = MEM_25AA020_read(0x07);
-        
-        PORTA = data;
-       
-        MEM_25AA020_write(0x07, 0xAA);        
+        _delay_ms(50);
+
     }
     return 0;
 }

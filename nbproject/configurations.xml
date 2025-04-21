@@ -20,6 +20,8 @@
       <itemPath>UART.h</itemPath>
       <itemPath>SPI.h</itemPath>
       <itemPath>25AA020A.h</itemPath>
+      <itemPath>TWI.h</itemPath>
+      <itemPath>AT24C16B.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -45,6 +47,7 @@
       <itemPath>UART.c</itemPath>
       <itemPath>SPI.c</itemPath>
       <itemPath>25AA020A.c</itemPath>
+      <itemPath>TWI.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
