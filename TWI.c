@@ -8,6 +8,65 @@ void init_TWI(char SLAVE_ADDRESS) {
     TWAR = (SLAVE_ADDRESS<<1);
 }
 
+
+char TWI_STA_COND(){
+    char status = 0;
+    // Start Condition
+    TWCR = (1 << TWINT) | (1 << TWSTA) | (1 << TWEN);
+
+    // wait
+    while (!(TWCR & (1 << TWINT)));
+
+    status = (TWSR & 0xF8); // 11111000
+    if (status != 0x08 && status != 0x10) {
+        return 1;
+    }
+    
+    return 0;
+}
+
+char TWI_CALL_DEVICE(char SLA){
+    
+    char status = 0;
+    // Send SLA address
+    TWDR = SLA;
+    TWCR = (1 << TWINT) | (1 << TWEN);
+    // wait
+    while (!(TWCR & (1 << TWINT)));
+
+    status = (TWSR & 0xF8); // 11111000
+    if (status != 0x18 && status != 0x20 && status != 0x40 && status != 0x48) {
+        return 2;
+    }
+    // SLA_W is sent correctly & ACK is received.
+    
+    return 0;
+}
+
+
+char TWI_SEND_DATA(char data){
+    
+    char status = 0;
+    // send data
+    TWDR = data;
+    TWCR = (1 << TWINT) | (1 << TWEN);
+    // wait
+    while (!(TWCR & (1 << TWINT)));
+
+    status = (TWSR & 0xF8); // 11111000
+    if (status != 0x28 && status != 0x30) {
+        return 3;
+    }
+    // data is sent correctly & ACK is received.
+    return 0;
+}
+
+void TWI_STO_COND(){
+    // send Stop condition
+    TWCR = (1 << TWINT) | (1 << TWSTO) | (1 << TWEN);
+    
+}
+
 char TWI_MT(char SLA_W, char data) {
     char status = 0;
     // Start Condition

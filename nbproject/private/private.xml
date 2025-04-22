@@ -3,34 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/timers.c</file>
+            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/AT24C16B.h</file>
+            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/TWI.c</file>
             <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/main.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/timers.h</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/LCD8.h</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/LCD8.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/LCD4.h</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/LCD4.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/LED.h</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/Button.h</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/25AA020A.h</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/Button.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/VButtons.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/SPI.h</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/25AA020A.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/VButtons.h</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/ADC.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/DIO.h</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/ADC.h</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/DIO.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/SPI.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/_7SEG.h</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/LM35.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/_7SEG.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/LED.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/EXT_INT.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/UART.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/EXT_INT.h</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/UART.h</file>
+            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/AT24C16B.c</file>
+            <file>file:/C:/Users/hossa/MPLABXProjects/Alex53.X/TWI.h</file>
         </group>
     </open-files>
 </project-private>

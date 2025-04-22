@@ -8,16 +8,15 @@
 #ifndef AT24C16B_H
 #define	AT24C16B_H
 
-#ifdef	__cplusplus
-extern "C" {
-#endif
+#define AT24C16B_ADDRESS_W 0xA0 // 10100000
+#define AT24C16B_ADDRESS_R 0xA1 // 10100001
 
 
+void init_AT24C16B();
 
-
-#ifdef	__cplusplus
-}
-#endif
+char MM_AT24C16B_read(short address);
+char MM_AT24C16B_read_Current();
+void MM_AT24C16B_write(short address, char data);
 
 #endif	/* AT24C16B_H */
 

@@ -27,30 +27,32 @@
 #include "SPI.h"
 #include "25AA020A.h"
 #include "TWI.h"
+#include "AT24C16B.h"
 
-#define OWN_ADDRESS 0x03 
 
-// SLAVE Address 0x07 ,, R =1 , W =0
-#define SLA1_W     0x0E  // 00001110
-#define SLA1_R     0x0F
-// SLAVE Address 0x07 ,, R =1 , W =0
-#define SLA2_W     0x10  // 00010000
-#define SLA2_R     0x11
+ 
+
+
 
 int main() {
 
 
-    DDRA = 0xFF;
-    _delay_ms(20);
-    init_TWI(OWN_ADDRESS); // 00000011
-
-    _delay_ms(50);
+    DDRA = 0xff;
+    _delay_ms(5);
+    init_AT24C16B();
     
-    PORTA = TWI_MR(SLA1_R);
+    
+    _delay_ms(500);
+    
+    MM_AT24C16B_write(0x00ff, 0xAA);
+    
+    _delay_ms(500);
+    
+    
+    PORTA = MM_AT24C16B_read(0x00ff);
     
     while (1) {
-        _delay_ms(50);
-
+      
     }
     return 0;
 }

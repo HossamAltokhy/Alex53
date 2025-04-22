@@ -48,6 +48,7 @@
       <itemPath>SPI.c</itemPath>
       <itemPath>25AA020A.c</itemPath>
       <itemPath>TWI.c</itemPath>
+      <itemPath>AT24C16B.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
