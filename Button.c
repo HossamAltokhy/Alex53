@@ -7,6 +7,7 @@
 void init_BTNs(){
     DIO_DIR_PINx(BTN1_DIR, BTN1, INPUT);
     DIO_DIR_PINx(BTN2_DIR, BTN2, INPUT);
+    DIO_DIR_PINx(BTN3_DIR, BTN3, INPUT);
     
 }
 int BTNs_isPressed(char BTN){

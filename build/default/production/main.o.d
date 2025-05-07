@@ -15,7 +15,7 @@ build/default/production/main.o.d build/default/production/main.o: main.c \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\fuse.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\lock.h DIO.h \
  Buzzer.h LED.h _7SEG.h LCD4.h keypad.h EXT_INT.h ADC.h LM35.h Button.h \
- timers.h UART.h SPI.h 25AA020A.h TWI.h AT24C16B.h
+ timers.h UART.h SPI.h 25AA020A.h TWI.h AT24C16B.h VButtons.h
 
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\util\delay.h:
 
@@ -78,3 +78,5 @@ SPI.h:
 TWI.h:
 
 AT24C16B.h:
+
+VButtons.h:
