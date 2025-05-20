@@ -10,6 +10,7 @@
 #include <util/delay.h>
 #include <avr/interrupt.h>
 #include <avr/io.h>
+#include <stddef.h>
 
 #include "DIO.h"
 #include "Buzzer.h"
@@ -29,6 +30,7 @@
 #include "TWI.h"
 #include "AT24C16B.h"
 #include "VButtons.h"
+#include "myfreertos/include/task.h"
 
 
 
@@ -37,31 +39,44 @@ void EEPROM_write(short address, char data);
 char EEPROM_read(short address);
 
  
-
+void vTask1(void * para){
+    
+    // init
+    
+    
+    while(1){
+        // Repeated process....
+        
+    }
+    
+}
 
 
 int main() {
     
-    DIO_DIR_PORTx(PORTx_A, OUTPUT_PORT);
-    init_BTNs();
     
+    xTaskCreate(
+            vTask1,
+            "myTask1",
+            4,
+            NULL,
+            1,
+            NULL
+            );
+    xTaskCreate(
+            vTask1,
+            "myTask2",
+            4,
+            NULL,
+            1,
+            NULL
+            );
     
-        
-    PORTA = EEPROM_read(0x0007);
+    vTaskStartScheduler();
+   
     while (1) {
       
-        if(BTNs_isPressed(BTN2)){
-            PORTA++;
-            _delay_ms(200);
-        }
-       
-        
-        if(BTNs_isPressed(BTN1)){
-            EEPROM_write(0x0007, PORTA);
-            _delay_ms(200);
-        }
-
-        
+      
     }
     return 0;
 }

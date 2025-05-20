@@ -22,6 +22,29 @@
       <itemPath>25AA020A.h</itemPath>
       <itemPath>TWI.h</itemPath>
       <itemPath>AT24C16B.h</itemPath>
+      <itemPath>myfreertos/include/FreeRTOS.h</itemPath>
+      <itemPath>myfreertos/include/FreeRTOSConfig.h</itemPath>
+      <itemPath>myfreertos/include/StackMacros.h</itemPath>
+      <itemPath>myfreertos/include/atomic.h</itemPath>
+      <itemPath>myfreertos/include/croutine.h</itemPath>
+      <itemPath>myfreertos/include/deprecated_definitions.h</itemPath>
+      <itemPath>myfreertos/include/event_groups.h</itemPath>
+      <itemPath>myfreertos/include/list.h</itemPath>
+      <itemPath>myfreertos/include/message_buffer.h</itemPath>
+      <itemPath>myfreertos/include/mpu_prototypes.h</itemPath>
+      <itemPath>myfreertos/include/mpu_syscall_numbers.h</itemPath>
+      <itemPath>myfreertos/include/mpu_wrappers.h</itemPath>
+      <itemPath>myfreertos/include/newlib-freertos.h</itemPath>
+      <itemPath>myfreertos/include/picolibc-freertos.h</itemPath>
+      <itemPath>myfreertos/include/portable.h</itemPath>
+      <itemPath>myfreertos/include/portmacro.h</itemPath>
+      <itemPath>myfreertos/include/projdefs.h</itemPath>
+      <itemPath>myfreertos/include/queue.h</itemPath>
+      <itemPath>myfreertos/include/semphr.h</itemPath>
+      <itemPath>myfreertos/include/stack_macros.h</itemPath>
+      <itemPath>myfreertos/include/stream_buffer.h</itemPath>
+      <itemPath>myfreertos/include/task.h</itemPath>
+      <itemPath>myfreertos/include/timers.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -49,6 +72,15 @@
       <itemPath>25AA020A.c</itemPath>
       <itemPath>TWI.c</itemPath>
       <itemPath>AT24C16B.c</itemPath>
+      <itemPath>myfreertos/croutine.c</itemPath>
+      <itemPath>myfreertos/event_groups.c</itemPath>
+      <itemPath>myfreertos/heap_4.c</itemPath>
+      <itemPath>myfreertos/list.c</itemPath>
+      <itemPath>myfreertos/port.c</itemPath>
+      <itemPath>myfreertos/queue.c</itemPath>
+      <itemPath>myfreertos/stream_buffer.c</itemPath>
+      <itemPath>myfreertos/tasks.c</itemPath>
+      <itemPath>myfreertos/timers.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -56,6 +88,9 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>myfreertos</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="default" type="2">
